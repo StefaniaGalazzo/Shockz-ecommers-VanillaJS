@@ -242,8 +242,11 @@ header{
   
     background-color: rgba(208, 208, 208, 0.292);
   } 
+  .wrapper__titles{
+    color:  rgb(65, 34, 121);
+  }
   
-  .flex-designedOrderBy{
+  .navbar2{
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -256,18 +259,35 @@ header{
 
 
   .ordinealfabetico, .ordinaperprezzo{
-    border: 2px solid black;
+    border: 2px solid  rgb(65, 34, 121);
     padding: 10px 15px;
     border-radius: 5px;
     margin: 0 10px;
     background-color: rgba(255, 255, 255, 0);
-    color: black;
+    color:  rgb(65, 34, 121);
   
   }
-
-  .cart{
-    background-color: rgba(240, 255, 255, 0);
+  .cart-icon{
+    font-size: 1.8rem;
+    color:  rgb(65, 34, 121);
   }
+  .cart-btn{
+    position: relative;
+    cursor: pointer;  
+  }
+
+  .cart-items{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: rgb(136, 81, 240);
+    padding: 2px 5px;
+    border-radius: 20%;
+    color: white;
+
+    font-size: 0.8rem;
+  }
+
   .wrapper__products{
     height: 65vh;
     margin: 20px 40px 120px 40px;

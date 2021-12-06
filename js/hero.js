@@ -7,7 +7,7 @@ const downButton = document.querySelector(".down-button");
 
 const slidesLength = slideRight.querySelectorAll("div").length;  
 
-console.log(slideRight.querySelectorAll("div"))
+// console.log(slideRight.querySelectorAll("div"))
 
 let activeSlideIndex = 0;  
 
@@ -37,3 +37,4 @@ upButton.addEventListener("click", (e) => {
     changeSlide("up"); });
 
 downButton.addEventListener("click", () => changeSlide("down"));  
+

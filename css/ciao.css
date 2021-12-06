@@ -58,6 +58,14 @@ header{
     color:white;
 
 }
+
+/*
+ja class
+
+.headerB{
+  background-color: white;
+  height: 40px;
+} */
  
 .logo{
     font-family: "Bodoni Moda", serif;
@@ -181,15 +189,15 @@ header{
     button {  
     background-color: #fff;  
     border: none;  
-    color: #aaa;  
+    color: rgb(65, 34, 121);  
     cursor: pointer;  
     font-size: 16px;  
     padding: 15px;  
     }  
 
     button:hover {  
-    color: rgb(96, 96, 96); 
-    background-color: white; 
+    color:rgb(65, 34, 121);; 
+    background-color: rgb(216, 231, 250); 
     font-weight: bold;
     }  
 
@@ -245,7 +253,9 @@ header{
   .wrapper__titles{
     color:  rgb(65, 34, 121);
   }
-  
+
+
+    /* N A V - B A R 2*/
   .navbar2{
       display: flex;
       align-items: center;
@@ -267,6 +277,8 @@ header{
     color:  rgb(65, 34, 121);
   
   }
+
+
   .cart-icon{
     font-size: 1.8rem;
     color:  rgb(65, 34, 121);
@@ -287,8 +299,30 @@ header{
 
     font-size: 0.8rem;
   }
+/*end nav-bar 2 */
+
 
   .wrapper__products{
+    width: 80%;
+    height: 700px;
+    
+    overflow-x: hidden;
+    
+    margin: 50px auto;
+    margin-bottom: 250px;
+    padding: 50px;
+    
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    
+    background-color: rgb(212, 226, 243);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 10px;
+    /*
+    la boutique style
     height: 65vh;
     margin: 20px 40px 120px 40px;
     padding: 30px;
@@ -297,10 +331,184 @@ header{
   
     overflow-x: hidden;
     z-index: 3;
-    border: 2px solid black;
+    border: 2px solid black; */
+  }
+  
+
+   .single-product{
+    margin-bottom: 20px;
+  } 
+
+
+  .img-container{
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 8px;    
+  }
+
+  .img-container:hover .prod-cart-btn{
+    transform: translateY(0);
+  }
+  .prod-cart-btn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: rgb(187, 216, 250);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.1rem;
+
+    font-family: "Bodoni Moda", serif;
+    font-weight: 800;
+    color: rgb(65, 34, 121);
+    transition: all 0.3s linear;
+    transform: translateX(101%);
+    cursor: pointer;
+  }
+
+
+  .img-product{
+    display: block;
+    width: 60%;
+    height: 12rem;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  .img-container:hover .img-product{
+    filter: blur(1px) ;
+    opacity: 0.4;
+  }
+
+  article h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform:uppercase;
+    font-style: italic;
+    text-align: center;
+    color: rgb(65, 34, 121);
   }
   
   
+  article h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(65, 34, 121);
+
+  }
+
+
+/* C A R T */
+.cart-over{
+  position: fixed;
+  top:0;
+  right:0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(104, 79, 150, 0.8);
+
+  z-index: 2;
+  transition: all 0.3 ease-in-out;
+
+  visibility: hidden
+}
+
+.cart{
+  position: fixed;
+  top:0;
+  right:0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: scroll;
+  background-color: rgb(65, 34, 121);
+  padding: 1.5rem;
+  z-index: 3;
+
+  color:rgb(214, 199, 240);
+  transition: all 0.3 ease-in-out;
+  transform: translateX(100%);
+
+}
+ /* JS C L A S S E S */
+.showCart{
+  transform: translateY(0);
+}
+
+.transpBackgrnd{
+  visibility: visible;
+}
+/**/
+
+
+@media screen and (min-width: 768px){
+  .cart{
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+
+.close-cart{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-item{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+  
+}
+
+
+.cart-item img{
+  width: 75px;
+  height: 75px;
+}
+
+
+.item-amount{
+  text-align: center;
+}
+
+.remove-item{
+  color: grey;
+  cursor: pointer;
+}
+
+.cart-footer{
+  text-align: center;
+}
+
+.clear-cart{
+  padding: 0.6rem;
+  border-radius: 2px;
+  margin: 2rem auto;
+}
+
+.fa-chevron-up, .fa-chevron-down{
+  color: rgb(214, 199, 240);
+  cursor: pointer;
+}
+
+/*   
   .product {
     display: flex;
     flex-direction: column;
@@ -334,7 +542,7 @@ header{
   .product p {
     align-self: flex-end;
   }
-  
+   */
   
   
   /* review */

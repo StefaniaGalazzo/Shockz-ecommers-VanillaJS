@@ -75,20 +75,22 @@ class UI{
   addBtns.forEach(button => {
   let id = button.dataset.id;
   let inCart = cart.find(item => item.id === id);
-  // console.log(inCart)
+  // console.log(button.dataset.id)
   if(inCart){
     button.innerText = "IN CART";
     button.disabled = true;
   } 
 
   button.addEventListener('click', (e) => {
-      e.target.innerText = "IN CART";
-      e.target.disabled = true;
+      // e.target.innerText = "IN CART";
+      // e.target.disabled = true;
 
       //get product from products 
-      let cartItem = Storage.getProduct(id);
-      console.log(cartItem)
+      let cartItem = {...Storage.getProduct(button.dataset.id)};
+      console.log(cartItem.id)
       //add product to the cart and
+      cart = [...cart, cartItem];
+      // console.log(cart)
       //save it in local storage
       //set cart values 
       //display cart item
